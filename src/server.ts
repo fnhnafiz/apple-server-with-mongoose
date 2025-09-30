@@ -3,12 +3,14 @@ import cors from "cors";
 import mongoose from "mongoose";
 import config from "./config";
 import userRoute from "./modules/users/user.routes";
+import appleRoutes from "./modules/apple/apple.routes";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use(userRoute);
+app.use(appleRoutes);
 
 app.get("/", (req, res) => {
   res.send("🍎🍎🍎  APPLE Server running ");
