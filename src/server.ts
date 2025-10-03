@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import config from "./config";
 import userRoute from "./modules/users/user.routes";
 import appleRoutes from "./modules/apple/apple.routes";
+import orderRoutes from "./modules/order/order.routes";
 
 const app = express();
 app.use(cors());
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use(userRoute);
 app.use(appleRoutes);
+app.use(orderRoutes)
 
 app.get("/", (req, res) => {
   res.send("🍎🍎🍎  APPLE Server running ");

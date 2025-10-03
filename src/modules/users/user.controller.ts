@@ -4,6 +4,7 @@ import User from "./user.model";
 export const registerUser = async (req: Request, res: Response) => {
   const newUser = req.body;
   const user = new User(newUser);
+  // console.log(user);
   const data = await user.save();
   res.send({
     success: true,
